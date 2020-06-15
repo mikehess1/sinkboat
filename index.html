@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- INCLUDE BOOSTRAP CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- INCLUDE FONTAWESOME CSS -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Sinkboat</title>
+    <link rel="shortcut icon" type="image/png" href="img/battleship.png" />
+  </head>
+
+  <!-- SINKBOAT HEADER -->
+  <header id="main-header" class="bg-primary text-white p-1 mb-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <img src="img/logo.png" height="100px" />
+        </div>
+        <div class="col-sm-6 text-right">
+          <i class="fab fa-github fa-4x mt-3 mr-2"></i>
+          <a href="https://twitter.com/mikehess1_" target="blank_"
+            ><i class="fab fa-twitter fa-4x mt-3 mr-2"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- BODY -->
+  <body>
+    <div class="container">
+      <div class="row p-3 mb-3">
+        <div class="col-xs-6 p-3 m-3">
+          <!-- GRID -->
+          <table id="grid">
+            <tr>
+              <td id="00">o</td>
+              <td id="01">o</td>
+              <td id="02">o</td>
+              <td id="03">o</td>
+              <td id="04">o</td>
+              <td id="05">o</td>
+              <td id="06">o</td>
+              <td id="07">o</td>
+            </tr>
+            <tr>
+              <td id="10">o</td>
+              <td id="11">o</td>
+              <td id="12">o</td>
+              <td id="13">o</td>
+              <td id="14">o</td>
+              <td id="15">o</td>
+              <td id="16">o</td>
+              <td id="17">o</td>
+            </tr>
+            <tr>
+              <td id="20">o</td>
+              <td id="21">o</td>
+              <td id="22">o</td>
+              <td id="23">o</td>
+              <td id="24">o</td>
+              <td id="25">o</td>
+              <td id="26">o</td>
+              <td id="27">o</td>
+            </tr>
+            <tr>
+              <td id="30">o</td>
+              <td id="31">o</td>
+              <td id="32">o</td>
+              <td id="33">o</td>
+              <td id="34">o</td>
+              <td id="35">o</td>
+              <td id="36">o</td>
+              <td id="37">o</td>
+            </tr>
+            <tr>
+              <td id="40">o</td>
+              <td id="41">o</td>
+              <td id="42">o</td>
+              <td id="43">o</td>
+              <td id="44">o</td>
+              <td id="45">o</td>
+              <td id="46">o</td>
+              <td id="47">o</td>
+            </tr>
+            <tr>
+              <td id="50">o</td>
+              <td id="51">o</td>
+              <td id="52">o</td>
+              <td id="53">o</td>
+              <td id="54">o</td>
+              <td id="55">o</td>
+              <td id="56">o</td>
+              <td id="57">o</td>
+            </tr>
+            <tr>
+              <td id="60">o</td>
+              <td id="61">o</td>
+              <td id="62">o</td>
+              <td id="63">o</td>
+              <td id="64">o</td>
+              <td id="65">o</td>
+              <td id="66">o</td>
+              <td id="67">o</td>
+            </tr>
+            <tr>
+              <td id="70">o</td>
+              <td id="71">o</td>
+              <td id="72">o</td>
+              <td id="73">o</td>
+              <td id="74">o</td>
+              <td id="75">o</td>
+              <td id="76">o</td>
+              <td id="77">o</td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-xs-6 p-3 m-3">
+          <div id="output">
+            <!-- OUTPUT GOES HERE-->
+          </div>
+          <div id="coordinates">
+            <!-- COORDINATES GO HERE-->
+          </div>
+          <br />
+          <div id="results">
+            <!-- RESULTS GO HERE -->
+          </div>
+          <div id="replay" hidden>
+            <a href="index.html" class="btn btn-primary">Play Again</a>
+          </div>
+        </div>
+      </div>
+      <!-- MODAL -->
+      <div
+        class="modal fade"
+        id="myModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="myModalLabel">
+                Welcome to Sinkboat
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              In this game, you will choose a boat and it's direction. Your boat
+              will be randomly placed on the board and the computer will find
+              it. To start, please complete the form below:
+              <hr />
+              <form action="" id="setupForm">
+                <!--Start Form Fields-->
+                <div class="form-group">
+                  <label for="boat">Choose a boat</label>
+                  <select name="boat" id="boat" class="form-control">
+                    <option value="Destroyer">Destroyer - 2 spaces</option>
+                    <option value="Submarine">Submarine - 3 spaces</option>
+                    <option value="Battleship">Battleship - 4 spaces</option>
+                    <option value="Carrier">Carrier - 5 spaces</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="direction">Choose a direction</label>
+                  <select name="direction" id="direction" class="form-control">
+                    <option value="North and South">North / South</option>
+                    <option value="East and West">East / West</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="speed">Choose an attack speed</label>
+                  <select name="speed" id="speed" class="form-control">
+                    <option value="10">Fast</option>
+                    <option value="5">Medium</option>
+                    <option value="2">Slow</option>
+                  </select>
+                </div>
+                <!--End Form Fields-->
+
+                <!--Start Form Buttons-->
+                <div class="modal-footer">
+                  <div class="form-group">
+                    <input
+                      type="reset"
+                      class="btn btn-secondary form-control"
+                      value="Reset"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="submit"
+                      class="btn btn-primary form-control"
+                      value="Begin!"
+                    />
+                  </div>
+                </div>
+
+                <!--End form Buttons-->
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INCLUDE JQUERY -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <!-- INCLUDE BOOTSTRAP JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/script.js"></script>
+    <script>
+      // Get the current year for copyright
+      $("#year").text(new Date().getFullYear());
+    </script>
+  </body>
+</html>

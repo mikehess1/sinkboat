@@ -1,0 +1,45 @@
+body {
+  background-color: #f7f7f7;
+}
+
+.bg-primary,
+.btn-primary {
+  background-color: #3b5998 !important;
+}
+
+a {
+  color: #fff;
+}
+
+i:hover {
+  color: #8b9dc3;
+}
+
+h5,
+h2,
+p {
+  color: #333;
+  font-family: "Freight Sans Bold", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+table {
+  background-color: black;
+  padding: 10px;
+  border: 10px solid #8b9dc3;
+}
+
+td {
+  background-color: #dfe3ee;
+  border: 1px solid black;
+  padding: 10px;
+  padding-top: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.highlight {
+  background-color: #d9534f;
+}
