@@ -1,0 +1,2 @@
+# sinkboat
+Simplified Battleship Simulator
