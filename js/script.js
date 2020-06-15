@@ -3,19 +3,19 @@
 // author: @mikehess1
 // date: 6/12/2020
 
-// Set form and output DOM elements
-var form = document.getElementById("setupForm");
-var output = document.getElementById("output");
-var coordinates = document.getElementById("coordinates");
-var results = document.getElementById("results");
+// Set DOM elements
+const form = document.getElementById("setupForm");
+const output = document.getElementById("output");
+const coordinates = document.getElementById("coordinates");
+const results = document.getElementById("results");
 
-// Boat Lengths
+// Set Boat Lengths
 const destroyer = 2;
 const submarine = 3;
 const battleship = 4;
 const carrier = 5;
 
-// Declare form variables
+// Declare variables
 let gridHash = {};
 let boat;
 let boatLength;
@@ -108,7 +108,7 @@ async function findBoat() {
       }
       // When boat has been found
       if (found) {
-        let p = sinkBoat(row, col);
+        sinkBoat(row, col);
         return;
       }
     }
