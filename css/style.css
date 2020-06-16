@@ -43,3 +43,34 @@ td {
 .highlight {
   background-color: #d9534f;
 }
+
+@media (max-width: 768px) {
+  #logo {
+    height: 50px;
+  }
+
+  h5,
+  h2,
+  p {
+    font-size: medium;
+  }
+
+  table {
+    background-color: black;
+    padding: 5px;
+    border: 10px solid #8b9dc3;
+  }
+
+  td {
+    padding: 0.75rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    font-size: 15px;
+  }
+
+  .fab {
+    font-size: 2rem;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+  }
+}
