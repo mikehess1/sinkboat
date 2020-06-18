@@ -135,7 +135,7 @@ async function fireShot(row, col) {
 }
 
 // Finishes firing on the boat
-function sinkBoat(row, col) {
+async function sinkBoat(row, col) {
   // If boat is on the last column
   if (col == 7) {
     // Fire down and print results
@@ -145,7 +145,7 @@ function sinkBoat(row, col) {
   }
 
   // Fire once on next space to the right
-  else fireShot(row, col + 1);
+  else await fireShot(row, col + 1);
 
   // If it's a hit, continue firing to the right
   if (isHit(row, col + 1)) {
@@ -225,7 +225,8 @@ async function printResults() {
 
   // Calculate the conclusion
   let conclusion;
-  if (shots < average)
+  if (shots == boatLength) conclusion = "This Case: Best Case, perfect game!";
+  else if (shots < average)
     conclusion =
       "This Case: " + (average / shots).toFixed(2) + "x faster than average";
   else if (shots > average)
